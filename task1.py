@@ -7,11 +7,12 @@ def l33t_code(word):
         word = word[:-2] + "xor"
     
     if "o" in word or "O" in word:
-        word.replace("o","0").replace("O","0")
+        word = word.replace("o","0").replace("O","0")
     if "e" in word or "E" in word:
-        word.replace("e","3").replace("E","3")
+        word = word.replace("e","3").replace("E","3")
     if "i" in word or "I" in word:
-        word.replace("i","1").replace("I","1")
+       word =  word.replace("i","1").replace("I","1")
+    
     return word
 
 def copy_file(src_file, dst_file):
@@ -22,6 +23,7 @@ def copy_file(src_file, dst_file):
             for page in pages_to_copy:
                 page_text = "".join(page)
                 page_text = l33t_code(page_text)
+                print(page_text)
                 dst.write(page_text)
     return dst_file
 
